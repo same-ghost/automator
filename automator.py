@@ -26,7 +26,7 @@ def target_sheet():
 # END target_sheet()
 
 
-def validator(grade):
+def validate_grade(grade):
     '''
         Check a single course grade against the list of valid grades.
     '''
@@ -63,7 +63,7 @@ for student in target_sheet.iter_rows(min_row=2):
     for course in source_sheet.iter_rows(min_row=2):
         
         course_grade = course[5].value
-        if validator(course_grade):
+        if validate_grade(course_grade):
 
             course_id = course[0].value
             course_code = course[2].value
