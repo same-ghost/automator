@@ -85,7 +85,6 @@ for student in target_sheet.iter_rows(min_row=2):
                     student[16].value = course_code
                     student[17].value = course_term
                     student[18].value = course_grade
-                    nwl_count = 1
 
                 if course_ger == 'HB':
                     student[22].value = course_code
