@@ -4,7 +4,7 @@ import time
 
 
 # GLOBAL ----------------------------------------------------------------------
-FILE_LOCATION = '/mnt/c/Users/talbert/Downloads/linux'
+FILE_LOCATION = '/mnt/c/Users/talbert/Downloads/linux/'
 
 
 # FUNCTION --------------------------------------------------------------------
@@ -133,9 +133,9 @@ for student in target_sheet.iter_rows(min_row=2):
                 student[53].value = course_term
                 student[54].value = course_grade
 
-
-target_book.save(FILE_LOCATION + 'targeted.xlsx')
-
 # Print test results
 t1 = time.process_time()
 print(f"Test completed in {t1-t0} seconds.")
+
+# Save workbook
+target_book.save(FILE_LOCATION + 'targeted.xlsx')
