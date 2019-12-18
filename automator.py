@@ -1,6 +1,7 @@
 # IMPORT ----------------------------------------------------------------------
 import openpyxl
 import time
+import degrees
 
 
 # GLOBAL ----------------------------------------------------------------------
@@ -84,10 +85,14 @@ def ger(student, ger, course, term, grade):
     '''
         Scan a GER type, and apply it to the correct column.
     '''
-    
-    student[GER_COLUMN[ger]].value = course
-    student[GER_COLUMN[ger] + 1].value = term
-    student[GER_COLUMN[ger] + 2].value = grade
+    if ger == 'HB' and student[GER_COLUMN[ger]].value != None and student[GER_COLUMN[ger]].value != course:
+        student[GER_COLUMN[ger] + 3].value = course
+        student[GER_COLUMN[ger] + 4].value = term
+        student[GER_COLUMN[ger] + 5].value = grade
+    else:
+        student[GER_COLUMN[ger]].value = course
+        student[GER_COLUMN[ger] + 1].value = term
+        student[GER_COLUMN[ger] + 2].value = grade
 # END ger()
 
 
