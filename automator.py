@@ -6,7 +6,9 @@ import time
 # GLOBAL ----------------------------------------------------------------------
 FILE_LOCATION = '/mnt/c/Users/talbert/Downloads/linux/'
 
+
 START_COLUMN = 10
+
 
 GER_COLUMN = {
 'FYW': START_COLUMN, 
@@ -109,15 +111,15 @@ for student in target_sheet.iter_rows(min_row=2):
         if validate_grade(course_grade):
 
             # Make values human-parsable
-            #course_id = course[0].value
-            #course_code = course[2].value
-            #course_term = format_term(course[1].value)
-            #course_ger = course[6].value
+            course_id = course[0].value
+            course_code = course[2].value
+            course_term = format_term(course[1].value)
+            course_ger = course[6].value
 
             # If student and course match, and the course fulfills a GER,
             # pass the information along to the GER column sorter.
-            if target_id == course[0].value and course[6].value != None:
-                ger(student, course[6].value, course[2].value, format_term(course[1].value), course_grade)
+            if target_id == course[0].value and course_ger != None:
+                ger(student, course_ger, course_code, course_term, course_grade)
 
 # Print test results
 t1 = time.process_time()
